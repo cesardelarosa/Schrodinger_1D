@@ -76,12 +76,26 @@ El potencial armónico es descrito por:
 \end{equation}
 Donde \(\omega\) es la frecuencia angular. Este potencial modela oscilaciones y tiene soluciones que son funciones de Hermite.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/Potencial_Armónico.png}
+    \caption{Potencial Armónico}
+    \label{fig:potencial_armonico}
+\end{figure}
+
 \subsection{Potencial Gaussiano}
 El potencial gaussiano es dado por:
 \begin{equation}
     U(x) = U_0 e^{-\frac{x^2}{2\sigma^2}}
 \end{equation}
 donde \(U_0\) es la profundidad del pozo y \(\sigma\) es la anchura.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/Potencial_Gaussiano.png}
+    \caption{Potencial Gaussiano}
+    \label{fig:potencial_gaussiano}
+\end{figure}
 
 \subsection{Pozo Infinito de Potencial}
 En el pozo infinito, el potencial es cero en una región y infinito fuera:
@@ -93,6 +107,13 @@ En el pozo infinito, el potencial es cero en una región y infinito fuera:
 \end{equation}
 Las funciones de onda son seno y coseno, con niveles de energía discretos.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/Pozo_Infinito.png}
+    \caption{Pozo Infinito de Potencial}
+    \label{fig:pozo_infinito}
+\end{figure}
+
 \subsection{Potencial de Morse}
 El potencial de Morse es dado por:
 \begin{equation}
@@ -100,12 +121,26 @@ El potencial de Morse es dado por:
 \end{equation}
 Donde \(D_e\) es la profundidad del potencial, \(a\) es un parámetro que controla la forma del potencial y \(x_e\) es la posición de equilibrio.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/Potencial_de_Morse.png}
+    \caption{Potencial de Morse}
+    \label{fig:potencial_morse}
+\end{figure}
+
 \subsection{Potencial de Lennard-Jones}
 El potencial de Lennard-Jones describe las interacciones entre moléculas:
 \begin{equation}
     U(r) = 4\epsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^{6} \right]
 \end{equation}
 donde \(\epsilon\) es la profundidad del pozo y \(\sigma\) es la distancia a la que la energía potencial es cero.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/Potencial_de_Lennard-Jones.png}
+    \caption{Potencial de Lennard-Jones}
+    \label{fig:potencial_lennard_jones}
+\end{figure}
 
 \subsection{Pozo Finito Cuadrado de Potencial}
 Este pozo tiene un potencial constante dentro de una región:
@@ -117,37 +152,37 @@ Este pozo tiene un potencial constante dentro de una región:
 \end{equation}
 La solución presenta características interesantes de reflexión y transmisión.
 
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/Pozo_Finito.png}
+    \caption{Pozo Finito Cuadrado de Potencial}
+    \label{fig:pozo_finito}
+\end{figure}
+
 \subsection{Pozo con Forma Arbitraria}
-Un potencial con forma arbitraria \(U(x)\) se puede definir matemáticamente según las necesidades del sistema. Este tipo de potencial permite el estudio de sistemas complejos y es fundamental en el modelado de ciertos fenómenos cuánticos.
-
-\subsection{Dos Pozos Cercanos de Cualquier Forma}
-Cuando se consideran dos pozos de potencial, se puede analizar la interferencia entre las funciones de onda de cada pozo. El sistema puede ser modelado como:
-\begin{equation}
-    U(x) = \begin{cases} 
-    U_1 & \text{si } x < x_0 \\ 
-    U_2 & \text{si } x > x_0 
-    \end{cases}
-\end{equation}
-Los resultados dependen de la distancia y la forma de los pozos.
-
-\section{Resultados}
-\subsection{Gráficas de Funciones de Onda}
-A continuación se presentan las funciones de onda calculadas para los primeros estados de cada potencial:
+Un potencial con forma arbitraria \(U(x)\) permite explorar soluciones más complejas. Aquí se introduce un potencial que varía suavemente en el espacio.
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[width=0.7\textwidth]{img/wavefunctions.png}
-    \caption{Funciones de onda para los primeros estados en los pozos de potencial.}
-    \label{fig:wavefunctions}
+    \includegraphics[width=0.7\textwidth]{img/Pozo_Arbitrario.png}
+    \caption{Pozo con Forma Arbitraria}
+    \label{fig:pozo_arbitrario}
 \end{figure}
 
-\section{Conclusiones}
-El análisis de la ecuación de Schrödinger en diferentes pozos de potencial ha permitido comprender la naturaleza de las funciones de onda y los niveles de energía. Los métodos numéricos utilizados han demostrado ser efectivos para resolver problemas complejos en física cuántica.
+\section{Resultados}
+Los resultados del análisis numérico se presentan en términos de las funciones de onda y los niveles de energía obtenidos para cada tipo de pozo de potencial. Se espera que las gráficas muestren las diferencias en el comportamiento cuántico de las partículas en función del tipo de potencial.
 
-\section{Bibliografía}
+\section{Conclusiones}
+El estudio de la ecuación de Schrödinger en diferentes pozos de potencial permite comprender cómo la forma del potencial afecta las propiedades cuánticas de las partículas. Los métodos numéricos implementados son herramientas poderosas para explorar sistemas más complejos que no tienen soluciones analíticas.
+
+\section{Referencias}
 \begin{thebibliography}{9}
-    \bibitem{tipler} Tipler, Paul A., y Ralph A. Llewellyn. \textit{Física Moderna}. 6ª edición. Reverté, 2009.
-    \bibitem{schro} Griffiths, David J. \textit{Introduction to Quantum Mechanics}. 2ª edición. Pearson Prentice Hall, 2005.
+\bibitem{ref1}
+Griffiths, D. J. (2005). \textit{Introducción a la mecánica cuántica}. Pearson.
+
+\bibitem{ref2}
+Sakurai, J. J. (1994). \textit{Modern Quantum Mechanics}. Addison-Wesley.
+
 \end{thebibliography}
 
 \end{document}
