@@ -1,0 +1,153 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}      % Para incluir imágenes
+\usepackage{amsmath}       % Para fórmulas matemáticas
+\usepackage{amssymb}       % Para símbolos matemáticos adicionales
+\usepackage{geometry}      % Para ajustar márgenes
+\usepackage{booktabs}      % Para tablas
+\usepackage{pgfplotstable} % Para cargar tablas desde archivos
+\geometry{margin=1in}      % Márgenes de 1 pulgada
+
+\title{Estudio de la Ecuación de Schrödinger en Diferentes Pozos de Potencial}
+\author{César de la Rosa Sobrino}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+  Este documento presenta un estudio numérico de la ecuación de Schrödinger independiente del tiempo para distintos pozos de potencial. Se emplean métodos numéricos basados en diferencias finitas y la integración numérica para discretizar la ecuación, permitiendo resolver el problema de autovalores para los niveles de energía y funciones de onda correspondientes.
+\end{abstract}
+
+\section{Introducción}
+La mecánica cuántica es una de las teorías fundamentales de la física moderna. La ecuación de Schrödinger es crucial, ya que describe cómo evoluciona el estado cuántico de un sistema en función del tiempo y del potencial en el que se encuentra. Este trabajo se centra en la resolución numérica de esta ecuación en diferentes tipos de pozos de potencial.
+
+\section{Base Teórica}
+\subsection{Ecuación de Schrödinger en Una Dimensión}
+La ecuación de Schrödinger independiente del tiempo en una dimensión se expresa como:
+\begin{equation}
+    \hat{H} \Psi(x) = E \Psi(x)
+\end{equation}
+donde \(\hat{H}\) es el operador Hamiltoniano, \(E\) es el autovalor correspondiente (energía), y \(\Psi(x)\) es la función de onda.
+
+El Hamiltoniano para una partícula en un potencial \(U(x)\) está dado por:
+\begin{equation}
+    \hat{H} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2} + U(x)
+\end{equation}
+Aquí, el operador Hamiltoniano se descompone en dos partes:
+- **Operador Cinético**: 
+  \[
+  \hat{T} = -\frac{\hbar^2}{2m} \frac{d^2}{dx^2}
+  \]
+- **Operador Potencial**: 
+  \[
+  \hat{V} = U(x)
+  \]
+
+\subsection{Principio de Incertidumbre de Heisenberg}
+El principio de incertidumbre establece que no es posible conocer simultáneamente la posición \(x\) y el momento \(p\) de una partícula con precisión infinita. Matemáticamente, se expresa como:
+\begin{equation}
+    \Delta x \Delta p \geq \frac{\hbar}{2}
+\end{equation}
+donde \(\Delta x\) y \(\Delta p\) son las incertidumbres en la posición y el momento, respectivamente.
+
+\section{Métodos Matemáticos}
+\subsection{Derivación Numérica}
+La derivación numérica se utiliza para calcular la derivada de la función de onda. Para la segunda derivada, que es esencial para el operador cinético, utilizamos la fórmula de diferencias finitas centradas:
+\begin{equation}
+\frac{d^2 \Psi(x)}{dx^2} \approx \frac{\Psi(x + h) - 2\Psi(x) + \Psi(x - h)}{h^2}
+\end{equation}
+donde \(h\) es el paso de discretización.
+
+\subsection{Integración Numérica}
+La integración numérica es utilizada para calcular la energía potencial y la normalización de la función de onda. Utilizamos la regla del trapecio para aproximar la integral:
+\begin{equation}
+    \int_a^b f(x) \, dx \approx \frac{h}{2} \left( f(x_1) + 2 \sum_{i=2}^{n-1} f(x_i) + f(x_n) \right)
+\end{equation}
+donde \(h\) es el tamaño del intervalo y \(x_i\) son los puntos de evaluación.
+
+\section{Tipos de Pozos de Potencial}
+Analizaremos los siguientes tipos de pozos de potencial:
+
+\subsection{Potencial Armónico}
+El potencial armónico es descrito por:
+\begin{equation}
+    U(x) = \frac{1}{2} m \omega^2 x^2
+\end{equation}
+Donde \(\omega\) es la frecuencia angular. Este potencial modela oscilaciones y tiene soluciones que son funciones de Hermite.
+
+\subsection{Potencial Gaussiano}
+El potencial gaussiano es dado por:
+\begin{equation}
+    U(x) = U_0 e^{-\frac{x^2}{2\sigma^2}}
+\end{equation}
+donde \(U_0\) es la profundidad del pozo y \(\sigma\) es la anchura.
+
+\subsection{Pozo Infinito de Potencial}
+En el pozo infinito, el potencial es cero en una región y infinito fuera:
+\begin{equation}
+    U(x) = \begin{cases} 
+    0 & \text{si } |x| < L \\ 
+    \infty & \text{si } |x| \geq L 
+    \end{cases}
+\end{equation}
+Las funciones de onda son seno y coseno, con niveles de energía discretos.
+
+\subsection{Potencial de Morse}
+El potencial de Morse es dado por:
+\begin{equation}
+    U(x) = D_e \left(1 - e^{-a(x - x_e)}\right)^2
+\end{equation}
+Donde \(D_e\) es la profundidad del potencial, \(a\) es un parámetro que controla la forma del potencial y \(x_e\) es la posición de equilibrio.
+
+\subsection{Potencial de Lennard-Jones}
+El potencial de Lennard-Jones describe las interacciones entre moléculas:
+\begin{equation}
+    U(r) = 4\epsilon \left[ \left(\frac{\sigma}{r}\right)^{12} - \left(\frac{\sigma}{r}\right)^{6} \right]
+\end{equation}
+donde \(\epsilon\) es la profundidad del pozo y \(\sigma\) es la distancia a la que la energía potencial es cero.
+
+\subsection{Pozo Finito Cuadrado de Potencial}
+Este pozo tiene un potencial constante dentro de una región:
+\begin{equation}
+    U(x) = \begin{cases} 
+    -U_0 & \text{si } |x| < L \\ 
+    0 & \text{si } |x| \geq L 
+    \end{cases}
+\end{equation}
+La solución presenta características interesantes de reflexión y transmisión.
+
+\subsection{Pozo con Forma Arbitraria}
+Un potencial con forma arbitraria \(U(x)\) se puede definir matemáticamente según las necesidades del sistema. Este tipo de potencial permite el estudio de sistemas complejos y es fundamental en el modelado de ciertos fenómenos cuánticos.
+
+\subsection{Dos Pozos Cercanos de Cualquier Forma}
+Cuando se consideran dos pozos de potencial, se puede analizar la interferencia entre las funciones de onda de cada pozo. El sistema puede ser modelado como:
+\begin{equation}
+    U(x) = \begin{cases} 
+    U_1 & \text{si } x < x_0 \\ 
+    U_2 & \text{si } x > x_0 
+    \end{cases}
+\end{equation}
+Los resultados dependen de la distancia y la forma de los pozos.
+
+\section{Resultados}
+\subsection{Gráficas de Funciones de Onda}
+A continuación se presentan las funciones de onda calculadas para los primeros estados de cada potencial:
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.7\textwidth]{img/wavefunctions.png}
+    \caption{Funciones de onda para los primeros estados en los pozos de potencial.}
+    \label{fig:wavefunctions}
+\end{figure}
+
+\section{Conclusiones}
+El análisis de la ecuación de Schrödinger en diferentes pozos de potencial ha permitido comprender la naturaleza de las funciones de onda y los niveles de energía. Los métodos numéricos utilizados han demostrado ser efectivos para resolver problemas complejos en física cuántica.
+
+\section{Bibliografía}
+\begin{thebibliography}{9}
+    \bibitem{tipler} Tipler, Paul A., y Ralph A. Llewellyn. \textit{Física Moderna}. 6ª edición. Reverté, 2009.
+    \bibitem{schro} Griffiths, David J. \textit{Introduction to Quantum Mechanics}. 2ª edición. Pearson Prentice Hall, 2005.
+\end{thebibliography}
+
+\end{document}
