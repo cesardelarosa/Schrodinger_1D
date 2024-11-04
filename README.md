@@ -16,10 +16,26 @@ En cualquier caso también se debe poder ejecutar correctamente en Matlab.
 
 El proyecto utiliza un `Makefile` para automatizar la ejecución de scripts de Octave y la compilación del documento LaTeX. A continuación, se detallan las diferentes opciones disponibles:
 
-### Compilar Todo
+### Generar todas las gráficas de potenciales y el .pdf final
 
-make
+`make`
 
-### Representar un potencial concreto
+### Generar todas las gráficas de potenciales
 
-make run_potential
+`make run_all`
+
+### Generar la gráfica de un potencial concreto
+
+`make run_potential`
+
+### Compilar el pdf
+
+`make compile_pdf`
+
+### Limpiar los archivos auxiliares
+
+`make clean`
+
+### Limpiar todos los archivos
+
+`make fclean`
